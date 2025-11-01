@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap');
+
+        :root {
+            --primary-color: #00bfff;
+            --secondary-color: #8a2be2;
+            --background-color: #0d1117;
+            --text-color: #c9d1d9;
+            --card-background: rgba(16, 22, 30, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        #background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .header {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .navbar a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .navbar a:hover {
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        main {
+            padding: 4rem 2rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            padding: 2.5rem;
+            background: var(--card-background);
+            border: 1px solid #222;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 191, 255, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 35px rgba(0, 191, 255, 0.2);
+            background: #000;
+            border-color: cyan;
+        }
+
+        h1, h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .about-description, .contact-email {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .skills-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: #10161d;
+            color: var(--primary-color);
+            padding: 0.7rem 1.3rem;
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+        }
+
+        .skill-item:hover {
+            background: var(--primary-color);
+            color: var(--background-color);
+            transform: scale(1.1);
+        }
+
+        .projects-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-background);
+            padding: 2rem;
+            border: 1px solid #222;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2);
+            border-color: var(--secondary-color);
+        }
+
+        .project-title {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="background-animation"></canvas>
+    <header class="header">
+        <nav class="navbar">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section id="about" class="about-section">
+            <h1 class="about-title">About Me</h1>
+            <p class="about-description">I am a Django backend developer with a passion for creating robust and scalable web applications.</p>
+        </section>
+        <section id="skills" class="skills-section">
+            <h2 class="skills-title">Skills</h2>
+            <ul class="skills-list">
+                <li class="skill-item">Python</li>
+                <li class="skill-item">C</li>
+                <li class="skill-item">SQL</li>
+                <li class="skill-item">JavaScript</li>
+            </ul>
+        </section>
+        <section id="projects" class="projects-section">
+            <h2 class="projects-title">Projects</h2>
+            <div class="project-card">
+                <h3 class="project-title">VoiceReach</h3>
+                <p class="project-description">A startup that features: <br> outgoing calls using ai agents, script and lead management, call alaytics dashbord, user authentication, subscriptions and purchases.</p>
+            </div>
+            <div class="project-card">
+                <h3 class="project-title">Neo4j PDF Uploader</h3>
+                <p class="project-description">A Python script that extracts content from PDFs (text, tables, images) and structures it into a hierarchical knowledge graph using Google's Gemini AI, then uploads to Neo4j.<br> <a href="https://github.com/RiazAlzy/neo4j_pdf_uploader" target="_blank">Details</a></p>
+            </div>
+        </section>
+        <section id="contact" class="contact-section">
+            <h2 class="contact-title">Contact</h2>
+            <p class="contact-email">riazalisekh7@gmail.com</p>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 My Portfolio</p>
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('background-animation');
+        const ctx = canvas.getContext('2d');
+
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        const particles = [];
+        const particleCount = 100;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+                this.color = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.size > 0.2) this.size -= 0.01;
+
+                if (this.x < 0 || this.x > width) this.speedX *= -1;
+                if (this.y < 0 || this.y > height) this.speedY *= -1;
+            }
+
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+
+            connect();
+
+            requestAnimationFrame(animate);
+        }
+
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a; b < particles.length; b++) {
+                    let distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x)) +
+                                 ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
+
+                    if (distance < (width / 7) * (height / 7)) {
+                        opacityValue = 1 - (distance / 20000);
+                        ctx.strokeStyle = `rgba(0, 191, 255, ${opacityValue})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        init();
+        animate();
+    </script>
+</body>
+</html>
