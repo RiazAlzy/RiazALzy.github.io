@@ -11,5 +11,9 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [react()]
+  integrations: [react()],
+
+  site: 'https://RiazAlzy.github.io',
+
+  base: '/',
 });
