@@ -1,0 +1,100 @@
+---
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import ProjectSection from '../components/ProjectSection';
+import ExperienceEducation from '../components/ExperienceEducation';
+import ContactFooter from '../components/ContactFooter';
+import '../styles/global.css';
+
+const aboutContent = `I am a recent high school graduate and aspiring Developer specializing in Python and Django. I’ve always been a firm believer in the 'learn-by-building' philosophy, which led me to complete the Open Source Society University (OSSU) curriculum to back up my hands-on projects with a deep understanding of Computer Science.
+
+Beyond the code, I previously founded and managed a social media marketing agency.
+
+These experiences taught me how to bridge the gap between technical work and business growth, and it’s why I’m so focused on writing clean, scalable code that actually solves real-world problems.`;
+
+const projects = [
+  {
+    title: "Knowledge Graph Master (KGM)",
+    description: "An Open source project that transforms unstructured PDF data into a structured, relational Knowledge Graph. Bridges the gap between static document storage and dynamic data exploration by integrating a hybrid Retrieval-Augmented Generation (RAG) system.",
+    highlights: [
+      "Automated Knowledge Extraction: Built a pipeline to parse complex PDFs, extracting entities and semantic relationships for a multi-dimensional Knowledge Graph.",
+      "GraphRAG Architecture: Developed a system querying vector embeddings and graph structures to enable 'multi-hop reasoning' across disparate document sections.",
+      "Interactive Graph Visualization: Implemented a high-performance visual interface for exploring data nodes and connections via an intuitive, interactive map.",
+      "Context-Aware AI Chat: Engineered a chat interface providing fact-grounded answers with citations, significantly reducing hallucinations using structured graph data.",
+      "Semantic Data Exploration: Optimized retrieval by combining similarity search with graph traversal for deeper insights than standard text-based RAG."
+    ],
+    link: "https://github.com/RiazAlzy/kgm"
+  },
+  {
+    title: "Yacht Charter Management Software",
+    description: "A comprehensive management platform for the yachting industry, designed to streamline high-end charter operations from initial broker proposal to the final guest experience. This project demonstrates my ability to build complex, role-based business logic alongside a premium, client-facing interface.",
+    highlights: [
+      "Bespoke Itinerary Engine: Engineered a robust library of stock destinations and template itineraries with full CRUD functionality.",
+      "Dynamic Proposal Builder: Implemented a real-time generator allowing brokers to edit itineraries 'on the fly' to meet specific client preferences instantly.",
+      "Interactive Geospatial Mapping: Integrated map-based visualization of yacht routes and destination waypoints for enhanced trip planning.",
+      "Multi-Tier Role Management: Architected a sophisticated RBAC system to support various broker levels and secure internal workflows.",
+      "Luxury Client Portal: Developed a dedicated interface for high-net-worth individuals (HNWIs) to review custom proposals, compare yachts, and manage guests.",
+      "Comprehensive Charter Operations: Built a centralized management dashboard to track bookings, vessel availability, and administrative charter details."
+    ]
+  }
+];
+
+const experience = [
+  {
+    role: "Founder",
+    company: "Altaric SMMA",
+    period: "Dec 2022 - Apr 2024",
+    description: "Built Altaric SMMA at the age of 16, overseeing brand strategy, client acquisition, and vendor management. I decided to close the agency after identifying critical gaps in the white-label fulfillment model. This experience taught me the vital importance of vertical integration and in-house quality control."
+  }
+];
+
+const education = [
+  {
+    institution: "Open Source Society University",
+    degree: "CS Undergraduate Curriculum",
+    period: "Dec 2023 - Sep 2025",
+    description: "The OSSU curriculum is a complete education in computer science using online materials. It is designed according to the degree requirements of undergraduate computer science majors. The courses are among the very best in the world, often coming from top institutes including Harvard, Stanford, Princeton, MIT."
+  },
+  {
+    institution: "Harvard Online",
+    degree: "CS50 Introduction to Computer Science",
+    period: "Certified",
+    description: "Foundational course in computer science and the art of programming."
+  }
+];
+
+const contact = {
+  email: "riazalisekh7@gmail.com",
+  github: "https://github.com/RiazAlzy",
+  linkedin: "https://www.linkedin.com/in/riazalzy/"
+};
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Portfolio | RiazAlzy | Software Engineer & Developer | System Architect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-slate-50 selection:bg-indigo-600 selection:text-white">
+    <Navbar client:load />
+    
+    <main>
+      <Hero aboutContent={aboutContent} client:load />
+      <ProjectSection projects={projects} client:load />
+      <ExperienceEducation experience={experience} education={education} client:load />
+    </main>
+
+    <ContactFooter 
+      email={contact.email} 
+      github={contact.github} 
+      linkedin={contact.linkedin} 
+      client:visible 
+    />
+	</body>
+</html>
