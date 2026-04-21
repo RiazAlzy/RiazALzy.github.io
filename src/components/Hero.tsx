@@ -9,13 +9,13 @@ const Hero = ({ aboutContent }: { aboutContent: string }) => {
         {/* Profile Image Container */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 0, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="order-1 lg:order-none group max-w-sm lg:max-w-md mx-auto w-full flex flex-col items-center"
         >
           {/* Image and Glow Wrapper */}
           <div className="relative w-full">
-            <div className="absolute -inset-4 bg-indigo-100/50 rounded-3xl blur-2xl group-hover:bg-indigo-200/50 transition-colors duration-700"></div>
+            <div className="absolute -inset-4 bg-indigo-100/50 rounded-3xl blur-2xl"></div>
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl bg-slate-100">
               <img 
                 src="/profile.png" 
@@ -25,7 +25,7 @@ const Hero = ({ aboutContent }: { aboutContent: string }) => {
             </div>
           </div>
 
-          {/* Name Display Added Here */}
+          {/* Name Display */}
           <div className="mt-8 text-center relative z-10">
             <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 tracking-tight">
               Riaz Ali Sekh
@@ -40,7 +40,7 @@ const Hero = ({ aboutContent }: { aboutContent: string }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-
+                        
             {/* Reduced text size from 7xl to 5xl */}
             <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-[1.1] mb-5">
               Software Engineer <br />
