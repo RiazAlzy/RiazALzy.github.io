@@ -40,12 +40,10 @@ const Hero = ({ aboutContent }: { aboutContent: string }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="text-indigo-600 font-bold uppercase tracking-[0.2em] text-xs mb-3">Aspiring Developer</h2>
-            
+                        
             {/* Reduced text size from 7xl to 5xl */}
             <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-[1.1] mb-5">
               Software Engineer <br />
-              <span className="text-slate-400">Systems Architect</span>
             </h1>
             
             {/* Reduced text size to base and space-y to 3 */}

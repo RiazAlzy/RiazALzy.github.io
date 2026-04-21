@@ -6,7 +6,7 @@ import ExperienceEducation from '../components/ExperienceEducation';
 import ContactFooter from '../components/ContactFooter';
 import '../styles/global.css';
 
-const aboutContent = `I am a recent high school graduate and aspiring Developer specializing in Python and Django. I’ve always been a firm believer in the 'learn-by-building' philosophy, which led me to complete the Open Source Society University (OSSU) curriculum to back up my hands-on projects with a deep understanding of Computer Science.
+const aboutContent = `Software Engineer specializing in Python, FastAPI and Django, building complex backend systems, AI-powered applications, and full-stack web platforms. Currently a Software Engineer at DPS Consulting Group. Completed the Open Source Society University (OSSU) computer science curriculum, with coursework from Harvard, Stanford, MIT, and Princeton.
 
 Beyond the code, I previously founded and managed a social media marketing agency.
 
@@ -27,7 +27,7 @@ const projects = [
   },
   {
     title: "Yacht Charter Management Software",
-    description: "A comprehensive management platform for the yachting industry, designed to streamline high-end charter operations from initial broker proposal to the final guest experience. This project demonstrates my ability to build complex, role-based business logic alongside a premium, client-facing interface.",
+    description: "A comprehensive management platform for the yachting industry, designed to streamline high-end charter operations from initial broker proposal to the final guest experience.",
     highlights: [
       "Bespoke Itinerary Engine: Engineered a robust library of stock destinations and template itineraries with full CRUD functionality.",
       "Dynamic Proposal Builder: Implemented a real-time generator allowing brokers to edit itineraries 'on the fly' to meet specific client preferences instantly.",
@@ -45,6 +45,12 @@ const experience = [
     company: "Altaric SMMA",
     period: "Dec 2022 - Apr 2024",
     description: "Built Altaric SMMA at the age of 16, overseeing brand strategy, client acquisition, and vendor management. I decided to close the agency after identifying critical gaps in the white-label fulfillment model. This experience taught me the vital importance of vertical integration and in-house quality control."
+  },
+  {
+    role: "Software Engineer",
+    company: "DPS Consulting Group",
+    period: "Apr 2026 - Present",
+    description: "Building AI solutions that leverage context-aware avatars to enhance internal team productivity and knowledge sharing."
   }
 ];
 
@@ -86,8 +92,8 @@ const contact = {
     
     <main>
       <Hero aboutContent={aboutContent} client:load />
-      <ProjectSection projects={projects} client:load />
       <ExperienceEducation experience={experience} education={education} client:load />
+      <ProjectSection projects={projects} client:load />
     </main>
 
     <ContactFooter 

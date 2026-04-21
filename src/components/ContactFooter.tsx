@@ -19,7 +19,7 @@ const ContactFooter = ({ email, github, linkedin }: { email: string, github: str
               <span className="text-slate-400">the future?</span>
             </h2>
             <p className="text-slate-400 text-lg max-w-md mb-12">
-              Currently seeking new opportunities to apply my technical skills in Python, Django, and modern web development.
+              Currently seeking new opportunities to apply my technical skills in Python, Django, FastAPI and AI/RAG system development.
             </p>
           </motion.div>
 
