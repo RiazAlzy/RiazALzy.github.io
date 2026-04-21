@@ -15,12 +15,12 @@ const Hero = ({ aboutContent }: { aboutContent: string }) => {
         >
           {/* Image and Glow Wrapper */}
           <div className="relative w-full">
-            <div className="absolute -inset-4 bg-indigo-100/50 rounded-3xl blur-2xl"></div>
+            <div className="absolute -inset-4 bg-indigo-100/50 rounded-3xl blur-2xl group-hover:bg-indigo-200/50 transition-colors duration-700"></div>
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl bg-slate-100">
               <img 
                 src="/profile.png" 
                 alt="Profile" 
-                className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-all duration-700"
               />
             </div>
           </div>
