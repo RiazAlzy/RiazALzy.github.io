@@ -9,7 +9,7 @@ const Hero = ({ aboutContent }: { aboutContent: string }) => {
         {/* Profile Image Container */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          animate={{ opacity: 0, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="order-1 lg:order-none group max-w-sm lg:max-w-md mx-auto w-full flex flex-col items-center"
         >
@@ -40,7 +40,7 @@ const Hero = ({ aboutContent }: { aboutContent: string }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-                        
+
             {/* Reduced text size from 7xl to 5xl */}
             <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-[1.1] mb-5">
               Software Engineer <br />
